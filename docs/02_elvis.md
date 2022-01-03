@@ -33,7 +33,7 @@ library(janitor)
 
 ### Lectura de datos
 
-En este proyecto la base de datos fue extraído de la pagina [investing.com](https://es.investing.com/),  data histórica de los indices bursátiles de los países alianza del pacifico del 2014-2021.
+En este proyecto la base de datos fue extraído de la pagina [investing.com](https://es.investing.com/),  data histórica de los indices bursátiles de los países alianza del pacifico del 2010-2021.
 
 Seguidamente se realiza una descripción del conjunto de datos ejecutados en relación a la pregunta general planteada:
 
@@ -146,24 +146,16 @@ bolsa_AP <- bind_rows(Bolsa_chile, Bolsa_peru, Bolsa_mexico, Bolsa_colombia)
 
 ```r
 
-Bolsa_peru %>%  
+Bolsa_peru  %>%      
     ggplot(aes(mes_año, precio_de_accion)) + 
-    geom_line()
+geom_line()
 ```
 
 <img src="02_elvis_files/figure-html/unnamed-chunk-8-1.png" width="672" />
 
-```r
-
-ggplot(Bolsa_peru,aes(precio_de_accion)) +
-  geom_boxplot()
-```
-
-<img src="02_elvis_files/figure-html/unnamed-chunk-8-2.png" width="672" />
-
 Observamos que en los años 2014 el Perú pasaba su peor momento de crisis alcanzando el minimo en los años 2016, luego del cual tuvo su acelerada crecimiento hasta el año 2018, luego del cual mantuvo un periode ciclico hasta el año 2020 donde tiene otra caida, producto de la crisis sanitaria.luego del cual se esta recuperando de forma rápida.
 
-El 50% del precio de las acciones estuvieron por encima de los índices bursatiles de 1800
+
 
 ### Gráfico de la serie historica del comportamiento del indices bursatil de México del 2014-2021
 
@@ -176,17 +168,9 @@ Bolsa_mexico %>%
 
 <img src="02_elvis_files/figure-html/unnamed-chunk-9-1.png" width="672" />
 
-```r
-
-ggplot(Bolsa_mexico, aes(precio_de_accion)) +
-  geom_boxplot()
-```
-
-<img src="02_elvis_files/figure-html/unnamed-chunk-9-2.png" width="672" />
-
 Observamos que en los años 2014 México estaba en un momento bueno de crecimiento bursatil alcanzando su mejor momento en el año 2017, luego del cual tuvo su decrecimiento alcansando su caida total con la crisis sanitaria 2020.luego del cual se esta recuperando de forma rápida.
 
-El 50% del precio de las acciones estuvieron por encima de los 4300 puntos 
+ 
 
 ### Gráfico de la serie historica del comportamiento del indices bursatil de Colombia del 2014-2021
 
@@ -199,17 +183,9 @@ Bolsa_colombia %>%
 
 <img src="02_elvis_files/figure-html/unnamed-chunk-10-1.png" width="672" />
 
-```r
-
-ggplot(Bolsa_colombia, aes(precio_de_accion)) +
-  geom_boxplot()
-```
-
-<img src="02_elvis_files/figure-html/unnamed-chunk-10-2.png" width="672" />
-
 Observamos que en los años 2014 Colombia pasaba su peor momento de crisis alcanzando un piso minimo en los años  2016, luego del cual tuvo su acelerada crecimiento hasta el año 2018, luego del cual mantuvo un periode ciclico hasta el año 2020 donde tiene otra caida, producto de la crisis sanitaria, luego del cual se esta recuperando de forma lenta.
 
-El 50% del precio de las acciones estuvieron por encima de los índices bursatiles de 1500.
+
 
 ### Gráfico de la serie historica del comportamiento del indices bursatil de Chile del 2014-2021
 
@@ -222,17 +198,9 @@ Bolsa_chile %>%
 
 <img src="02_elvis_files/figure-html/unnamed-chunk-11-1.png" width="672" />
 
-```r
-
-ggplot(Bolsa_chile, aes(precio_de_accion)) +
-  geom_boxplot()
-```
-
-<img src="02_elvis_files/figure-html/unnamed-chunk-11-2.png" width="672" />
-
 Observamos que en los años 2014 Chile pasaba momento de crecimiento lento, luego del cual tuvo una acelerado creciemiento a partir de los años 2016 alcanzando su pico  maximo en los años 2018, luego del cual comenso su caida terminando por completo el años 2020 producto de la crisis sanitaria, luego del cual se esta recuperando de forma lenta.
 
-El 50% del precio de las acciones estuvieron por encima de los índices bursatiles de 4300.
+
 
 ### Gráfico comparativo la serie historica del indices bursatil de los paises de alianza del pacifico del    2014-2021
 
@@ -245,31 +213,22 @@ bolsa_AP %>%
 
 <img src="02_elvis_files/figure-html/unnamed-chunk-12-1.png" width="672" />
 
-```r
-bolsa_AP %>% 
-  ggplot(aes(mes_año, precio_de_accion, color = bolsa)) +
-  geom_boxplot()
-```
+Observamos que los paises de Chile y México mantuvieron su indice bursatil muy parejos desde la integracion de la Alianza del Pacífico, además dichos paises superan a Perú y Colombia en índices bursatiles en aproximadamente 2000 puntos en los precios de sus acciones. Cabe notar que México tiene una mejor recuperación que Chile en su mercado. 
 
-<img src="02_elvis_files/figure-html/unnamed-chunk-12-2.png" width="672" />
+Por otro lado Perú y Colombia han mantenido muy similar en su índice bursatil, cabe notar que Perú tiene un mejor índice bursatil que colombia aun despues de la crisis sanitaria Covid-19.
 
-Observamos que los paises de Chile y México mantuvieron su indice bursatil muy parejos desde desde la integracion de la Alianza del Pacífico, además dichos paises superan a Perú y Colombia en índices bursatiles en aprimadamente 2000 puntos en los precios de sus acciones. Cabe notar que México tiene una mejor recuperacion que Chile en su mercado. 
 
-Por otro lado Perú y Colombia han mantenido muy similar en su indice bursatil, cabe notar que Perú tiene un mejor índice bursatil que colombia aun despues de la crisis sanitaria Covid-19.
-
-Ademas se puede notar claramente con el grafico de cajas que los 50% del precio de las acciones  de Colombia es menor a los de Perú y éste a su vez menor que Chile el cual es superado ligeramente por México.
 
 ## Conclusiones
  
-Perú ha tenido un indice bursatil en crecimiento desde el año 2016 mas aun de la caida  en crisis sanitaria muestra una clara garantia de atraccion de las inversiones. 
+ Perú ha tenido un indice bursatil en crecimiento desde el año 2016 mas aun de la caida  en crisis sanitaria muestra una clara garantia de atracción de las inversiones. 
+México ha tenido un indice bursatil en crecimiento desde antes del 2014, antes de la crisis sanitaria mostró su caida, pero actualmente su economia se recupera muy satisfactoriamnte lo cual muestra claras garantias de un mercado confiable para las inversiones.
 
-México ha tenido un indice bursatil en crecimiento desde antes del 2014, antes de la crisis sanitaria mostro su caida, pero actualmente su economia se recupera muy satisfactoriamnte lo cual muestra claras garantias de un mercado confiable en sus lainversiones
+Colombia ha mantenido un índice bursatil irregular, casi constante en crecimiento lento con respecto a años anteriores a la crisis sanitaria, luego del cual se recupera con indice muy por debajo de sus puntos anterioes a la crisis, lo que muestra un mercado no muy confiable en las inversiones.
 
-Colombia no ha tenido ha tenido un indice bursatil irregular pero en crecimiento lento con respecto a años anteriores a la crisis sanitaria, luego del cual se recupera con indice muy por debajo de sus puntos anterioes a la crisis, lo que muestra un mercado no muy confiable en las inversiones.
+Por su parte Chile durante el tiempo de la comparacion desde los años 2014 de la Alianza del Pacifico, mostró los tres primeros años en un rapido crecimiento, luego del cual su caida también fue igual que su crecimeinto en sentido opuesto; mas aun luego de la crisis sanitaria, se recupera lentamente no llegando a su mejor momento, lo que muestra que tampoco no hay una clara garantia para las inversiones, pero viendo su historial es muy prematuro hablar de ello.
 
-Por su parte Chile durante el tiempo de la comparacion desde los años 2014 de la Alianza del Pacifico, mostro los tres primeros años en una rapido crecimiento, luego del cual su caida tambien fue igual que su crecimeinto; mas aun luego de la crisis sanitaria, se recupera lentamente no llegando a su mejor momento, lo que muestra que tampoco no hay una clara garantia para las inversiones, pero viendo su historial es muy prematuro hablar de ello.
-
-se puede decir que de los 4 paises el que mejor posicionamiento tiene con respecto a su mercado es México y Perú, mas aun luego de la crisi sanitaria del Covid-19.
+Se puede decir que de los 4 paises el que mejor posicionamiento que tiene con respecto a su mercado es México y Perú, más aun luego de la crisis sanitaria del Covid-19.
 
 ## Referencias
 

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Capítulo 2 Explorando factores sociales en el ausentismo electoral | Práctica de elaboración de reporte con datos</title>
+<meta name="author" content="Calderon, Samuel; Caycho, Elvis; Escudero, Antenor; Reyes, Nelly; Zúñiga, Leanna">
+<meta name="description" content="Antenor Escudero  2.1 Introducción En la entrega anterior del Taller de R Markdown, se realizó un breve estudio vinculando variables sociales del IDH con el ausentismo electoral en las Elecciones...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="Capítulo 2 Explorando factores sociales en el ausentismo electoral | Práctica de elaboración de reporte con datos">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://t12102.talleresdedatos.com/ausentismo.html">
+<meta property="og:description" content="Antenor Escudero  2.1 Introducción En la entrega anterior del Taller de R Markdown, se realizó un breve estudio vinculando variables sociales del IDH con el ausentismo electoral en las Elecciones...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Capítulo 2 Explorando factores sociales en el ausentismo electoral | Práctica de elaboración de reporte con datos">
+<meta name="twitter:description" content="Antenor Escudero  2.1 Introducción En la entrega anterior del Taller de R Markdown, se realizó un breve estudio vinculando variables sociales del IDH con el ausentismo electoral en las Elecciones...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.0/transition.js"></script><script src="libs/bs3compat-0.3.0/tabs.js"></script><script src="libs/bs3compat-0.3.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/tabwid-1.0.0/tabwid.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="bs4_style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Práctica de elaboración de reporte con datos</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Presentación</a></li>
+<li><a class="" href="sobre-los-autores.html">Sobre los autores</a></li>
+<li><a class="" href="bolsa-AP.html"><span class="header-section-number">1</span> Comportamiento del índice Bursatil de los paises de la Alianza del Pacífico</a></li>
+<li><a class="active" href="ausentismo.html"><span class="header-section-number">2</span> Explorando factores sociales en el ausentismo electoral</a></li>
+<li><a class="" href="participacion-mujeres.html"><span class="header-section-number">3</span> Participación de las mujeres jóvenes en el 2019 Y 2020</a></li>
+<li><a class="" href="insercion-laboral.html"><span class="header-section-number">4</span> Inserción laboral de la población venezolana en el Perú: Una aproximación a la data</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="ausentismo" class="section level1" number="2">
+<h1>
+<span class="header-section-number">Capítulo 2</span> Explorando factores sociales en el ausentismo electoral<a class="anchor" aria-label="anchor" href="#ausentismo"><i class="fas fa-link"></i></a>
+</h1>
+<p><em>Antenor Escudero</em></p>
+<div id="introducción-1" class="section level2" number="2.1">
+<h2>
+<span class="header-section-number">2.1</span> Introducción<a class="anchor" aria-label="anchor" href="#introducci%C3%B3n-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>En <a href="https://bookdown.org/samuelcs8_17/grupo_2021_enero_febrero/ausentismo.html">la entrega anterior del Taller de R Markdown</a>, se realizó un breve estudio vinculando variables sociales del IDH con el ausentismo electoral en las Elecciones Complementarias del 2020, enfocado en el caso de los distritos de Lima. En dicho estudio se realizó una comparación entre el nivel de IDH y los indicadores que lo componen con el ausentismo electoral, encontrándose una relación positiva y fuerte con el PBI per capita y los años de estudios. Considerando ello, esta entrega busca ampliar dichos hallazgos, considerando densidad poblacional como variable en el ausentismo, así como ampliando la selección a nivel nacional de distritos.</p>
+</div>
+<div id="paquetes-usados-1" class="section level2" number="2.2">
+<h2>
+<span class="header-section-number">2.2</span> Paquetes usados<a class="anchor" aria-label="anchor" href="#paquetes-usados-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>Los paquetes utilizados son readxl, tidyverse, janitor, ggthemes y pobreza2018. El paquete readxl nos permite leer y manejar los documentos en formato .xslx, el paquete tidyverse nos da herramientas para el manejo y ordenamiento de datos; y el paquete janitor nos permite reorganizar los valores; el paquete ggthemes nos permite generar gráficos de diverso tipo y, finalmente, pobreza2018 nos permite acceder al ubigeo de la Reniec y convalidar con las demás tablas.</p>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readxl.tidyverse.org">readxl</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/sfirke/janitor">janitor</a></span><span class="op">)</span></code></pre></div>
+</div>
+<div id="conjuntos-de-datos-usados-1" class="section level2" number="2.3">
+<h2>
+<span class="header-section-number">2.3</span> Conjuntos de datos usados<a class="anchor" aria-label="anchor" href="#conjuntos-de-datos-usados-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>Se utilizarán los conjuntos de datos de las tablas de los resultados electorales de la primera y segunda vuelta de las elecciones del 2021, de Ronderos.pe; la tabla de información regional de Ceplan, la tabla del Indíce de Desarrollo Humano y la tabla de ubigeos.</p>
+<p>La tabla de resultados electorales, Elecciones2021, nos proveerá del ubigeo, los votantes habilitados y cantidad de personas que votaron en primera y segunda vuelta, a partir de lo cual se calculará el porcentaje de ausentismo. La tabla de Ceplan,nos proveerá del ubigeo, la densidad poblacional, el porcentaje de desnutrición crónica, el índice de desarrollo humano, el porcentaje de población en pobreza y en pobreza extrema, la población ocupada y el presupuesto devengado per capita; renombrándose la tabla como CEPLAN. La tabla del índice de desarrollo humano 2019, IDH2019, nos proveera de la esperanza de vida al nacer, la población de 18 años con educación secundaria completa, el ingreso familiar per capita y el ubigeo. La tabla de ubigeos nos permite homogenizar los ubigeos de RENIEC e INEI.</p>
+<p>Las tablas serán vinculadas mediante el ubigeo, resultando en la tabla Ausentismo2021 que agrupará estas variables y data.</p>
+<p>Cargamos la tabla CEPLAN, escogiendo la hoja “Distrital,” usando “skip” para establecer el nombre de las columnas. Además, filtramos a través del código de ubigeo los casos distritales. Además, mediante select tomamos las columnas relevantes para nuestro estudio y modificamos sus nombres para facilitar su uso.</p>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">CEPLAN</span> <span class="op">&lt;-</span>
+  <span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="st">"data/DATA_CEPLAN.xlsx"</span>, sheet <span class="op">=</span> <span class="st">"Distrital"</span>, skip <span class="op">=</span> <span class="fl">8</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/pkg/janitor/man/clean_names.html">clean_names</a></span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span>
+    <span class="fu">str_detect</span><span class="op">(</span><span class="va">ubigeo</span>, <span class="st">"^\\d{6}$"</span><span class="op">)</span>,
+    <span class="op">!</span><span class="fu">str_detect</span><span class="op">(</span><span class="va">ubigeo</span>, <span class="st">"^\\d{4}00$"</span><span class="op">)</span>,
+    <span class="va">ubigeo</span> <span class="op">!=</span> <span class="st">"159999"</span>
+  <span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">select</span> <span class="op">(</span>
+    UBIGEO <span class="op">=</span> <span class="va">ubigeo</span>,
+    POBLACION2020 <span class="op">=</span> <span class="va">poblacion_total_2020_1b</span>,
+    DENSIPOB <span class="op">=</span> <span class="va">densidad_2020</span>,
+    PORCENDESCRONI <span class="op">=</span> <span class="va">porcentaje_de_desnutricion_cronica_ninos_menores_de_5_anos_2020_9</span>,
+    INDEHU2019 <span class="op">=</span> <span class="va">indice_de_desarrollo_humano_idh_2019_15</span>,
+    PORPOBPOBR <span class="op">=</span> <span class="va">porcentaje_de_la_poblacion_en_pobreza_total_16a</span>,
+    PORPOBPOBREX <span class="op">=</span> <span class="va">porcentaje_de_la_poblacion_en_pobreza_extrema_17a</span>,
+    POBOCU <span class="op">=</span> <span class="va">poblacion_ocupada_2017_18</span>,
+    DEVPERCAP2020 <span class="op">=</span> <span class="va">devengado_per_capita_en_soles_2020_total_19</span>
+  <span class="op">)</span></code></pre></div>
+<p>Luego, cargamos los datos de IDH2019, utilizando skip=3 y clean_names para modificar los nombres de las columnas, seleccionando Ubigeo, Esperanza de vida al nacer, Población de 18 años con educación secundaria completa e Ingreso familiar per capita. Utilizamos filter para descartar los ubideos de provincias y regiones, quedándonos con distritos.</p>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">IDH2019</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_xlsx</a></span><span class="op">(</span><span class="st">"data/IDHPERU2019.xlsx"</span>, skip <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/pkg/janitor/man/clean_names.html">clean_names</a></span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">select</span><span class="op">(</span>
+    UBIGEO <span class="op">=</span> <span class="va">ubigeo</span>,
+    ESPVIDNAC <span class="op">=</span> <span class="va">esperanza_de_vida_al_nacer_7</span>,
+    POB18SECOM <span class="op">=</span> <span class="va">poblacion_18_anos_con_educ_secundaria_completa_8</span>,
+    INGFAMCAP <span class="op">=</span> <span class="va">ingreso_familiar_per_capita_10</span>
+  <span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span>
+    <span class="fu">str_detect</span><span class="op">(</span><span class="va">UBIGEO</span>, <span class="st">"^\\d{6}$"</span><span class="op">)</span>,
+    <span class="op">!</span><span class="fu">str_detect</span><span class="op">(</span><span class="va">UBIGEO</span>, <span class="st">"^\\d{4}00$"</span><span class="op">)</span>,
+    <span class="va">UBIGEO</span> <span class="op">!=</span> <span class="st">"159999"</span>
+  <span class="op">)</span></code></pre></div>
+<p>Luego incluimos la tabla Elecciones2021. Debido a que la data se distribuye en las mesas de votación, las agrupamos mediante el código de ubigeo, sumando la cantidad de votantes hábiles y el total de ciudadanos que votaron de cada ubigeo en ambas vueltas, creando dos columnas producto de calcular el porcentaje de ausentismo en ambas vueltas. Además, filtramos los ubigeos no necesitados.</p>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">Elecciones2021</span> <span class="op">&lt;-</span> <span class="fu">read_csv</span><span class="op">(</span><span class="st">"data/presidencial.csv"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">select</span> <span class="op">(</span>
+    <span class="va">v2_CCODI_UBIGEO</span>,
+    <span class="va">v1_TOT_CIUDADANOS_VOTARON</span>,
+    <span class="va">v1_NNUME_HABILM</span>,
+    <span class="va">v2_TOT_CIUDADANOS_VOTARON</span>,
+    <span class="va">v2_NNUME_HABILM</span>
+  <span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">group_by</span><span class="op">(</span><span class="va">v2_CCODI_UBIGEO</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">summarise</span><span class="op">(</span>
+    v1_TOT_CIUDADANOS_VOTARON <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span> <span class="op">(</span><span class="va">v1_TOT_CIUDADANOS_VOTARON</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> ,
+    v1_NNUME_HABILM <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span> <span class="op">(</span><span class="va">v1_NNUME_HABILM</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,
+    v2_NNUME_HABILM <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span> <span class="op">(</span><span class="va">v2_NNUME_HABILM</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,
+    v2_TOT_CIUDADANOS_VOTARON <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span> <span class="op">(</span><span class="va">v2_TOT_CIUDADANOS_VOTARON</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+  <span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">mutate</span> <span class="op">(</span>
+    PORAUSENTEV1 <span class="op">=</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="op">(</span><span class="va">v1_TOT_CIUDADANOS_VOTARON</span> <span class="op">/</span> <span class="va">v1_NNUME_HABILM</span><span class="op">)</span><span class="op">)</span> <span class="op">*</span> <span class="fl">100</span>,
+    PORAUSENTEV2 <span class="op">=</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="op">(</span><span class="va">v2_TOT_CIUDADANOS_VOTARON</span> <span class="op">/</span> <span class="va">v2_NNUME_HABILM</span><span class="op">)</span><span class="op">)</span> <span class="op">*</span> <span class="fl">100</span>
+    <span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">select</span> <span class="op">(</span>UBIGEO <span class="op">=</span> <span class="va">v2_CCODI_UBIGEO</span>, <span class="va">PORAUSENTEV1</span>, <span class="va">PORAUSENTEV2</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu">str_starts</span><span class="op">(</span><span class="va">UBIGEO</span>, <span class="st">"9"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<p>Después, creamos la tabla ubigeos seleccionando region, provincia, distrito y ubigeo, a fin de, mediante este último, estandarizar los códigos de ubigeo entre las tablas, que utilizan los códigos de RENIEC o de INEI.</p>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">ubigeos</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="st">"data/equivalencia_ubigeos.xlsx"</span><span class="op">)</span></code></pre></div>
+<p>Por último, compilamos la información de las cuatro tablas y, con las variables escogidas, creamos la tabla Ausentismo2021, vinculándolas mediante ubigeo como variable común y articulándo a las filas.</p>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">Ausentismo2021</span><span class="op">&lt;-</span> <span class="va">ubigeos</span> <span class="op">%&gt;%</span>
+  <span class="fu">left_join</span> <span class="op">(</span><span class="va">Elecciones2021</span>, by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"UBIGEO_RONDEROS"</span> <span class="op">=</span> <span class="st">"UBIGEO"</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+  <span class="fu">left_join</span><span class="op">(</span><span class="va">CEPLAN</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+  <span class="fu">left_join</span><span class="op">(</span><span class="va">IDH2019</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+  <span class="fu">mutate</span><span class="op">(</span><span class="fu">across</span><span class="op">(</span><span class="op">-</span><span class="op">(</span><span class="va">region</span><span class="op">:</span><span class="va">UBIGEO</span><span class="op">)</span>, <span class="va">as.numeric</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+  <span class="fu">mutate</span> <span class="op">(</span>PORPOBOCU <span class="op">=</span> <span class="op">(</span><span class="va">POBOCU</span><span class="op">/</span><span class="va">POBLACION2020</span><span class="op">)</span><span class="op">*</span><span class="fl">100</span><span class="op">)</span></code></pre></div>
+</div>
+<div id="resultados-1" class="section level2" number="2.4">
+<h2>
+<span class="header-section-number">2.4</span> Resultados<a class="anchor" aria-label="anchor" href="#resultados-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>A fin de iniciar el estudio de los datos, primero debemos encontrar la relación entre el ausentismo en ambas vueltas a fin de encontrar diferencias que puedan influenciar en el comportamiento de estas variables con otras.</p>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">Ausentismo2021</span> <span class="op">%&gt;%</span> 
+  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span><span class="va">PORAUSENTEV1</span>, <span class="va">PORAUSENTEV2</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="03-antenor_files/figure-html/unnamed-chunk-7-1.png" width="672"></div>
+<p>Como podemos observar, hay una relación directa entre ambas variables, por lo que usar ambas vueltas de forma diferente no tiene propósito; a fin de partir de la data más reciente, se utilizará el ausentismo de la Segunda Vuelta.</p>
+<p>Procedemos a realizar el cruce de variables, tomando como variable independiente el Porcentaje de Ausentismo en Segunda vuelta y variables dependientes el IDH, la Esperanza de Vida al Nacer, el Porcentaje de Población Mayor de 18 años con Secundaria Completa, los Ingresos Familiares per Capita, el Presupuesto Devengado Total per Capita y los Porcentajes de Población en Situacion de Pobreza y Pobreza Extrema.</p>
+<p>Para empezar, cruzamos el ausentismo con el IDH de los distritos.</p>
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">Ausentismo2021</span> <span class="op">%&gt;%</span>
+<span class="fu">select</span><span class="op">(</span><span class="va">UBIGEO</span>, <span class="va">INDEHU2019</span>, <span class="va">PORAUSENTEV2</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span><span class="va">INDEHU2019</span>, <span class="va">PORAUSENTEV2</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">labs</span><span class="op">(</span>
+    title <span class="op">=</span> <span class="st">"Relación entre IDH distrital y Ausentismo Electoral en la Primera Vuelta"</span>,
+    subtitle <span class="op">=</span> <span class="st">"Perú en las Elecciones del 2021, Segunda Vuelta"</span>,
+    x <span class="op">=</span> <span class="st">"´Índice de Desarrollo Humano"</span>,
+    y <span class="op">=</span> <span class="st">"Porcentaje de Ausentismo Electoral"</span>,
+    caption <span class="op">=</span> <span class="st">"Fuente: Oficina Nacional de Procesos Electorales, Centro Nacional de Planeamiento Estratégico, PNUD"</span>
+  <span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="03-antenor_files/figure-html/unnamed-chunk-8-1.png" width="672"></div>
+<p>Tal como podemos observar, en los niveles bajos de IDH hay mucha dispersión lo que dificulta afirmar un mayor ausentismo, sin embargo, a medida que el nivel aumenta, hay un menor ausentismo, asi como una menor dispersión, aunque a cierto punto, la tendencia se revierte al elevarse mucho.</p>
+<p>Procedemos a realizar la misma operación con Esperanza de Vida al Nacer.</p>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">Ausentismo2021</span> <span class="op">%&gt;%</span>
+<span class="fu">select</span><span class="op">(</span><span class="va">UBIGEO</span>, <span class="va">ESPVIDNAC</span>, <span class="va">PORAUSENTEV2</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span><span class="va">ESPVIDNAC</span>, <span class="va">PORAUSENTEV2</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">labs</span><span class="op">(</span>
+    title <span class="op">=</span> <span class="st">"Relación entre Esperanza de Vida al Nacer y Ausentismo Electoral en la Segunda Vuelta"</span>,
+    subtitle <span class="op">=</span> <span class="st">"Perú en las Elecciones del 2021, Segunda Vuelta"</span>,
+    x <span class="op">=</span> <span class="st">"Esperanza de Vida al Nacer"</span>,
+    y <span class="op">=</span> <span class="st">"Porcentaje de Ausentismo Electoral"</span>,
+    caption <span class="op">=</span> <span class="st">"Fuente: Oficina Nacional de Procesos Electorales, Centro Nacional de Planeamiento Estratégico, PNUD"</span>
+  <span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="03-antenor_files/figure-html/unnamed-chunk-9-1.png" width="672"></div>
+<p>Hay una notoria dispersión en este caso entre el Porcentaje de Ausentismo y la Esperanza de Vida al Nacer, no puede afirmarse alguna relación definida.</p>
+<p>En el caso de Densidad Poblacional, observamos esta tendencia.</p>
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">Ausentismo2021</span> <span class="op">%&gt;%</span>
+<span class="fu">select</span><span class="op">(</span><span class="va">UBIGEO</span>, <span class="va">DENSIPOB</span>, <span class="va">PORAUSENTEV2</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span><span class="va">DENSIPOB</span>, <span class="va">PORAUSENTEV2</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">scale_x_log10</span><span class="op">(</span>breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">10</span>, <span class="fl">100</span>, <span class="fl">1000</span>, <span class="fl">10000</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">labs</span><span class="op">(</span>
+    title <span class="op">=</span> <span class="st">"Relación entre Densidad Poblacional Distrital y Ausentismo Electoral en la Segunda Vuelta"</span>,
+    subtitle <span class="op">=</span> <span class="st">"Perú en las Elecciones del 2021, Segunda Vuelta"</span>,
+    x <span class="op">=</span> <span class="st">"Densidad Poblacional"</span>,
+    y <span class="op">=</span> <span class="st">"Porcentaje de Ausentismo Electoral"</span>,
+    caption <span class="op">=</span> <span class="st">"Fuente: Oficina Nacional de Procesos Electorales, Centro Nacional de Planeamiento Estratégico, PNUD"</span>
+  <span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="03-antenor_files/figure-html/unnamed-chunk-10-1.png" width="672"></div>
+<p>Una menor densidad poblacional tiene una alta dispersión respecto al ausentismo, lo que va reduciendose a medida que se eleva la densidad poblacional, aunque con una relación muy débil.</p>
+<p>Ahora procedemos a observar el caso del Porcentaje de Población en Situación de Pobreza.</p>
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">Ausentismo2021</span> <span class="op">%&gt;%</span>
+<span class="fu">select</span><span class="op">(</span><span class="va">UBIGEO</span>, <span class="va">PORPOBPOBR</span>, <span class="va">PORAUSENTEV2</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span><span class="va">PORPOBPOBR</span>, <span class="va">PORAUSENTEV2</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">labs</span><span class="op">(</span>
+    title <span class="op">=</span> <span class="st">"Relación entre Porcentaje de la Población en Situación de Pobreza y Ausentismo Electoral en la Segunda Vuelta"</span>,
+    subtitle <span class="op">=</span> <span class="st">"Perú en las Elecciones del 2021, Segunda Vuelta"</span>,
+    x <span class="op">=</span> <span class="st">"Porcentaje de la Población en Situación de Pobreza"</span>,
+    y <span class="op">=</span> <span class="st">"Porcentaje de Ausentismo Electoral"</span>,
+    caption <span class="op">=</span> <span class="st">"Fuente: Oficina Nacional de Procesos Electorales, Centro Nacional de Planeamiento Estratégico, PNUD"</span>
+  <span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="03-antenor_files/figure-html/unnamed-chunk-11-1.png" width="672"></div>
+<p>En este caso, hay una relación positiva débil entre el Ausentismo y el Porcentaje de Población en Situación de Pobreza, aunque la dispersión se eleva a medida que el Porcentaje de la Población en Situación de Pobreza.</p>
+<p>En el caso de la Población en Situación de Pobreza Extrema, esta tendencia se hace más fuerte.</p>
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">Ausentismo2021</span> <span class="op">%&gt;%</span>
+<span class="fu">select</span><span class="op">(</span><span class="va">UBIGEO</span>, <span class="va">PORPOBPOBREX</span>, <span class="va">PORAUSENTEV2</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span><span class="va">PORPOBPOBREX</span>, <span class="va">PORAUSENTEV2</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">labs</span><span class="op">(</span>
+    title <span class="op">=</span> <span class="st">"Relación entre Porcentaje de la Población en Situación de Pobreza Extrema y Ausentismo Electoral en la Segunda Vuelta"</span>,
+    subtitle <span class="op">=</span> <span class="st">"Perú en las Elecciones del 2021, Segunda Vuelta"</span>,
+    x <span class="op">=</span> <span class="st">"Población en Situación de Pobreza Extrema"</span>,
+    y <span class="op">=</span> <span class="st">"Porcentaje de Ausentismo Electoral"</span>,
+    caption <span class="op">=</span> <span class="st">"Fuente: Oficina Nacional de Procesos Electorales, Centro Nacional de Planeamiento Estratégico, PNUD"</span>
+  <span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="03-antenor_files/figure-html/unnamed-chunk-12-1.png" width="672"></div>
+<p>Los casos con menor porcentaje de Población en Situación de Pobreza Extrema se aglomeran en los niveles más bajos de ausentismo y hay una relación más fuerte respecto a la variable anterior, pero, en misma medida, hay una dispersión más pronunciada a medida que este porcentaje aumenta.</p>
+<p>Veamos el caso del Presupuesto Devengado per Capita.</p>
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">Ausentismo2021</span> <span class="op">%&gt;%</span>
+<span class="fu">select</span><span class="op">(</span><span class="va">UBIGEO</span>, <span class="va">DEVPERCAP2020</span>, <span class="va">PORAUSENTEV2</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span><span class="va">DEVPERCAP2020</span>, <span class="va">PORAUSENTEV2</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">scale_x_log10</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">labs</span><span class="op">(</span>
+    title <span class="op">=</span> <span class="st">"Relación entre Presupuesto Devengado per Capita y Ausentismo Electoral en la Segunda Vuelta"</span>,
+    subtitle <span class="op">=</span> <span class="st">"Perú en las Elecciones del 2021, Segunda Vuelta"</span>,
+    x <span class="op">=</span> <span class="st">"Presupuesto Devengado per Capita"</span>,
+    y <span class="op">=</span> <span class="st">"Porcentaje de Ausentismo Electoral"</span>,
+    caption <span class="op">=</span> <span class="st">"Fuente: Oficina Nacional de Procesos Electorales, Centro Nacional de Planeamiento Estratégico, PNUD"</span>
+  <span class="op">)</span> </code></pre></div>
+<div class="inline-figure"><img src="03-antenor_files/figure-html/unnamed-chunk-13-1.png" width="672"></div>
+<p>Vemos una pronunciada relación negativa entre ambas variables, concentrándose los casos en el margen del 40% y 20% de ausentismo, y, considerando los outliers, vemos que no se reduce considerablemente el ausentismo a medida que se eleva el presupuesto devengado per capita.</p>
+<p>Revisemos el caso del Porcentaje de Población Mayor de 18 años con Secundaria Completa.</p>
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">Ausentismo2021</span> <span class="op">%&gt;%</span>
+<span class="fu">select</span><span class="op">(</span><span class="va">UBIGEO</span>, <span class="va">POB18SECOM</span>, <span class="va">PORAUSENTEV2</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span><span class="va">POB18SECOM</span>, <span class="va">PORAUSENTEV2</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">labs</span><span class="op">(</span>
+    title <span class="op">=</span> <span class="st">"Relación entre Porcentaje de la Población con Secundaria Completa y Ausentismo Electoral en la Segunda Vuelta"</span>,
+    subtitle <span class="op">=</span> <span class="st">"Perú en las Elecciones del 2021, Segunda Vuelta"</span>,
+    x <span class="op">=</span> <span class="st">"Porcentaje de la Población con Secundaria Completa"</span>,
+    y <span class="op">=</span> <span class="st">"Porcentaje de Ausentismo"</span>,
+    caption <span class="op">=</span> <span class="st">"Fuente: Oficina Nacional de Procesos Electorales, Centro Nacional de Planeamiento Estratégico, PNUD"</span>
+  <span class="op">)</span> </code></pre></div>
+<div class="inline-figure"><img src="03-antenor_files/figure-html/unnamed-chunk-14-1.png" width="672"></div>
+<p>Se detecta una relación negativa entre ambas variables, con una relación medianamente fuerte, evidenciandose una concentración en el 20% de ausentismo. Nuevamente, hay una menor dispersión en la segunda vuelta.</p>
+<p>Comparemos el caso del Ingreso Familiar per Capita.</p>
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">Ausentismo2021</span> <span class="op">%&gt;%</span>
+<span class="fu">select</span><span class="op">(</span><span class="va">UBIGEO</span>, <span class="va">INGFAMCAP</span>, <span class="va">PORAUSENTEV2</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span><span class="va">INGFAMCAP</span>, <span class="va">PORAUSENTEV2</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">labs</span><span class="op">(</span>
+    title <span class="op">=</span> <span class="st">"Relación entre Ingreso Familiar per Capita y Ausentismo Electoral en la Segunda Vuelta"</span>,
+    subtitle <span class="op">=</span> <span class="st">"Perú en las Elecciones del 2021, Segunda Vuelta"</span>,
+    x <span class="op">=</span> <span class="st">"Ingreso Familiar per Capita"</span>,
+    y <span class="op">=</span> <span class="st">"Porcentaje de Ausentismo"</span>,
+    caption <span class="op">=</span> <span class="st">"Fuente: Oficina Nacional de Procesos Electorales, Centro Nacional de Planeamiento Estratégico, PNUD"</span>
+  <span class="op">)</span> </code></pre></div>
+<div class="inline-figure"><img src="03-antenor_files/figure-html/unnamed-chunk-15-1.png" width="672"></div>
+<p>En el caso del Ingreso Familiar per Capita, vemos que los ingresos más bajos se concentran en el margen del 40% y 20% de ausentismo, reduciéndose a medida que aumentan los ingresos, pero hasta los 1500 soles, donde se dispersa y, ligeramente, se revierte la tendencia.</p>
+<p>Por último, comparando el ausentismo entre ambas elecciones, es posiblee afirmar que en la segunda vuelta se reduce la dispersión, y el ausentismo en los sectores de menores ingresos.</p>
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">Ausentismo2021</span> <span class="op">%&gt;%</span>
+  <span class="fu">select</span><span class="op">(</span><span class="va">UBIGEO</span>, <span class="va">PORAUSENTEV1</span>, <span class="va">PORAUSENTEV2</span>, <span class="va">INGFAMCAP</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span><span class="va">PORAUSENTEV1</span>, <span class="va">PORAUSENTEV2</span>, color <span class="op">=</span> <span class="va">INGFAMCAP</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">labs</span><span class="op">(</span>
+    title <span class="op">=</span> <span class="st">"Ausentismo Electoral en ambas vueltas e Ingreso Familiar per Capita"</span>,
+    subtitle <span class="op">=</span> <span class="st">"Peru en las Elecciones del 2021"</span>,
+    x <span class="op">=</span> <span class="st">"Porcentaje de Ausentismo Electoral, Primera Vuelta"</span>,
+    y <span class="op">=</span> <span class="st">"Porcentaje de Ausentismo Electoral, Segunda Vuelta"</span>,
+     <span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="03-antenor_files/figure-html/unnamed-chunk-16-1.png" width="672"></div>
+</div>
+<div id="conclusiones-1" class="section level2" number="2.5">
+<h2>
+<span class="header-section-number">2.5</span> Conclusiones<a class="anchor" aria-label="anchor" href="#conclusiones-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>Se hipotetizó que la Densidad Poblacional influiría en el Porcentaje de Ausentismo Electoral, demostrándose una gran dispersión en los casos de baja densidad pero un menor ausentismo en los casos de mayor densidad. Asimismo, se comprobó que los indicadores socioeconómicos, como Ingreso Familiar, Población en Situación de Pobreza y Nivel Educativo tenían una influencia importante. Llamó la atención cómo una mayor precariedad (bajo nivel educativo, pobreza, bajos ingresos, baja esperanza de vida) antes que aumentar el ausentismo, dispersaban los casos y dificultaban encontrar una relación.</p>
+<p>Aunque un estudio sobre el comportamiento político supondría un estudio más a nivel de individuos, de cada votante, sus apreciaciones, expectativas y actitudes, así como tomar en cuenta por quienes votaron cada uno de estos distritos y vincularlo a las variables sociales que se utilizaron.</p>
+<p>Aunque ciertamente es sutil, los sectores con menores ingresos votaron más en la Segunda Vuelta que en la primera. En la entrega anterior, señalé que los sectores más afluentes en Lima Metropolitana tenían los niveles de ausentismo más altos en las Elecciones Extraordinarias del 2020. En este caso, vemos que no hubo un cambio importante en su comportamiento, pero si en los distritos con más carencias, más apáticos en la Primera Vuelta pero aumentando su participación en la Segunda Vuelta.</p>
+<p>Aunque se sabe <a href="https://larepublica.pe/elecciones/2021/04/21/elecciones-2021-asi-votaron-los-mas-pobres-pltc/">que las localidades más pobres tuvieron una votación mayoritaria hacia Pedro Castillo</a>, el grado de movilización hacia el voto en la Segunda Vuelta nos da un elemento más a considerar en lo que implicaron estas elecciones, partiendo de la población que apoyo a determinadas candidaturas y el cálculo costo-beneficio que supuso este cambio de comportamiento.</p>
+<p>Ciertamente el análisis de los factores que llevan al ausentismo electoral deben ser exploradas más allá de gráficos, evaluando más variables que las presentadas, pero esta breve exploración puede iniciar nuevas preguntas que falte realizarse, así como ver el problema en perspectiva histórica.</p>
+
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="bolsa-AP.html"><span class="header-section-number">1</span> Comportamiento del índice Bursatil de los paises de la Alianza del Pacífico</a></div>
+<div class="next"><a href="participacion-mujeres.html"><span class="header-section-number">3</span> Participación de las mujeres jóvenes en el 2019 Y 2020</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#ausentismo"><span class="header-section-number">2</span> Explorando factores sociales en el ausentismo electoral</a></li>
+<li><a class="nav-link" href="#introducci%C3%B3n-1"><span class="header-section-number">2.1</span> Introducción</a></li>
+<li><a class="nav-link" href="#paquetes-usados-1"><span class="header-section-number">2.2</span> Paquetes usados</a></li>
+<li><a class="nav-link" href="#conjuntos-de-datos-usados-1"><span class="header-section-number">2.3</span> Conjuntos de datos usados</a></li>
+<li><a class="nav-link" href="#resultados-1"><span class="header-section-number">2.4</span> Resultados</a></li>
+<li><a class="nav-link" href="#conclusiones-1"><span class="header-section-number">2.5</span> Conclusiones</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/03-antenor.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/03-antenor.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Práctica de elaboración de reporte con datos</strong>" was written by Calderon, Samuel; Caycho, Elvis; Escudero, Antenor; Reyes, Nelly; Zúñiga, Leanna. It was last built on 2022-01-03.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>

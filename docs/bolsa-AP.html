@@ -4,15 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Capítulo 1 Comportamiento del índice Bursatil de los paises de la Alianza del Pacífico | A Minimal Book Example</title>
-<meta name="author" content="John Doe">
+<title>Capítulo 1 Comportamiento del índice Bursatil de los paises de la Alianza del Pacífico | Práctica de elaboración de reporte con datos</title>
+<meta name="author" content="Calderon, Samuel; Caycho, Elvis; Escudero, Antenor; Reyes, Nelly; Zúñiga, Leanna">
 <meta name="description" content="Elvis Favian Caycho Villegas Matemático por la Universidad Nacional del Callao. Hizo una Maestría en Ciencia de la Educación Matemática por la Universidad Nacional Enrique Guzmán y Valle. Maestría...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Capítulo 1 Comportamiento del índice Bursatil de los paises de la Alianza del Pacífico | A Minimal Book Example">
+<meta property="og:title" content="Capítulo 1 Comportamiento del índice Bursatil de los paises de la Alianza del Pacífico | Práctica de elaboración de reporte con datos">
 <meta property="og:type" content="book">
+<meta property="og:url" content="https://t12102.talleresdedatos.com/bolsa-AP.html">
 <meta property="og:description" content="Elvis Favian Caycho Villegas Matemático por la Universidad Nacional del Callao. Hizo una Maestría en Ciencia de la Educación Matemática por la Universidad Nacional Enrique Guzmán y Valle. Maestría...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Capítulo 1 Comportamiento del índice Bursatil de los paises de la Alianza del Pacífico | A Minimal Book Example">
+<meta name="twitter:title" content="Capítulo 1 Comportamiento del índice Bursatil de los paises de la Alianza del Pacífico | Práctica de elaboración de reporte con datos">
 <meta name="twitter:description" content="Elvis Favian Caycho Villegas Matemático por la Universidad Nacional del Callao. Hizo una Maestría en Ciencia de la Educación Matemática por la Universidad Nacional Enrique Guzmán y Valle. Maestría...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -28,7 +29,7 @@
 
     <div class="d-flex align-items-start justify-content-between">
       <h1>
-        <a href="index.html" title="">A Minimal Book Example</a>
+        <a href="index.html" title="">Práctica de elaboración de reporte con datos</a>
       </h1>
       <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
     </div>
@@ -43,9 +44,9 @@
 <li><a class="" href="index.html">Presentación</a></li>
 <li><a class="" href="sobre-los-autores.html">Sobre los autores</a></li>
 <li><a class="active" href="bolsa-AP.html"><span class="header-section-number">1</span> Comportamiento del índice Bursatil de los paises de la Alianza del Pacífico</a></li>
-<li><a class="" href="trabajo-de-antenor.html"><span class="header-section-number">2</span> Trabajo de Antenor</a></li>
-<li><a class="" href="participacion-mujeres.html"><span class="header-section-number">3</span> Participación de las mújeres jóvenes en el 2019 Y 2020</a></li>
-<li><a class="" href="trabajo-de-leanna.html"><span class="header-section-number">4</span> Trabajo de Leanna</a></li>
+<li><a class="" href="ausentismo.html"><span class="header-section-number">2</span> Explorando factores sociales en el ausentismo electoral</a></li>
+<li><a class="" href="participacion-mujeres.html"><span class="header-section-number">3</span> Participación de las mujeres jóvenes en el 2019 Y 2020</a></li>
+<li><a class="" href="insercion-laboral.html"><span class="header-section-number">4</span> Inserción laboral de la población venezolana en el Perú: Una aproximación a la data</a></li>
 </ul>
 
         <div class="book-extra">
@@ -89,7 +90,7 @@ data con terminaciones CSV. Las siglas CSV vienen del inglés “Comma Separated
 <h3>
 <span class="header-section-number">1.3.1</span> Lectura de datos<a class="anchor" aria-label="anchor" href="#lectura-de-datos"><i class="fas fa-link"></i></a>
 </h3>
-<p>En este proyecto la base de datos fue extraído de la pagina <a href="https://es.investing.com/">investing.com</a>, data histórica de los indices bursátiles de los países alianza del pacifico del 2014-2021.</p>
+<p>En este proyecto la base de datos fue extraído de la pagina <a href="https://es.investing.com/">investing.com</a>, data histórica de los indices bursátiles de los países alianza del pacifico del 2010-2021.</p>
 <p>Seguidamente se realiza una descripción del conjunto de datos ejecutados en relación a la pregunta general planteada:</p>
 <p>Iniciamos con la descarga y guardado de nuestra base de datos; a partir de ello, procedimos a leerla a través de la función read_csv().</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
@@ -186,92 +187,63 @@ Luego, Modificamos las variables de nuestro conjunto de datos con mutate(), pust
 <span class="header-section-number">1.4.1</span> Gráfico de la serie historica del comportamiento del indices bursatil de Perú del 2014-2021<a class="anchor" aria-label="anchor" href="#gr%C3%A1fico-de-la-serie-historica-del-comportamiento-del-indices-bursatil-de-per%C3%BA-del-2014-2021"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="bolsa-AP.html#cb8-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-2"><a href="bolsa-AP.html#cb8-2" aria-hidden="true" tabindex="-1"></a>Bolsa_peru <span class="sc">%&gt;%</span>  </span>
+<span id="cb8-2"><a href="bolsa-AP.html#cb8-2" aria-hidden="true" tabindex="-1"></a>Bolsa_peru  <span class="sc">%&gt;%</span>      </span>
 <span id="cb8-3"><a href="bolsa-AP.html#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(mes_año, precio_de_accion)) <span class="sc">+</span> </span>
-<span id="cb8-4"><a href="bolsa-AP.html#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>()</span></code></pre></div>
+<span id="cb8-4"><a href="bolsa-AP.html#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_line</span>()</span></code></pre></div>
 <div class="inline-figure"><img src="02_elvis_files/figure-html/unnamed-chunk-8-1.png" width="672"></div>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R">
-<span class="fu">ggplot</span><span class="op">(</span><span class="va">Bolsa_peru</span>,<span class="fu">aes</span><span class="op">(</span><span class="va">precio_de_accion</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">geom_boxplot</span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<div class="inline-figure"><img src="02_elvis_files/figure-html/unnamed-chunk-8-2.png" width="672"></div>
 <p>Observamos que en los años 2014 el Perú pasaba su peor momento de crisis alcanzando el minimo en los años 2016, luego del cual tuvo su acelerada crecimiento hasta el año 2018, luego del cual mantuvo un periode ciclico hasta el año 2020 donde tiene otra caida, producto de la crisis sanitaria.luego del cual se esta recuperando de forma rápida.</p>
-<p>El 50% del precio de las acciones estuvieron por encima de los índices bursatiles de 1800</p>
 </div>
 <div id="gráfico-de-la-serie-historica-del-comportamiento-del-indices-bursatil-de-méxico-del-2014-2021" class="section level3" number="1.4.2">
 <h3>
 <span class="header-section-number">1.4.2</span> Gráfico de la serie historica del comportamiento del indices bursatil de México del 2014-2021<a class="anchor" aria-label="anchor" href="#gr%C3%A1fico-de-la-serie-historica-del-comportamiento-del-indices-bursatil-de-m%C3%A9xico-del-2014-2021"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="bolsa-AP.html#cb10-1" aria-hidden="true" tabindex="-1"></a>Bolsa_mexico <span class="sc">%&gt;%</span> </span>
-<span id="cb10-2"><a href="bolsa-AP.html#cb10-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">ggplot</span>(<span class="fu">aes</span>(mes_año, precio_de_accion)) <span class="sc">+</span> </span>
-<span id="cb10-3"><a href="bolsa-AP.html#cb10-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">geom_line</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="bolsa-AP.html#cb9-1" aria-hidden="true" tabindex="-1"></a>Bolsa_mexico <span class="sc">%&gt;%</span> </span>
+<span id="cb9-2"><a href="bolsa-AP.html#cb9-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">ggplot</span>(<span class="fu">aes</span>(mes_año, precio_de_accion)) <span class="sc">+</span> </span>
+<span id="cb9-3"><a href="bolsa-AP.html#cb9-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">geom_line</span>()</span></code></pre></div>
 <div class="inline-figure"><img src="02_elvis_files/figure-html/unnamed-chunk-9-1.png" width="672"></div>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R">
-<span class="fu">ggplot</span><span class="op">(</span><span class="va">Bolsa_mexico</span>, <span class="fu">aes</span><span class="op">(</span><span class="va">precio_de_accion</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">geom_boxplot</span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<div class="inline-figure"><img src="02_elvis_files/figure-html/unnamed-chunk-9-2.png" width="672"></div>
 <p>Observamos que en los años 2014 México estaba en un momento bueno de crecimiento bursatil alcanzando su mejor momento en el año 2017, luego del cual tuvo su decrecimiento alcansando su caida total con la crisis sanitaria 2020.luego del cual se esta recuperando de forma rápida.</p>
-<p>El 50% del precio de las acciones estuvieron por encima de los 4300 puntos</p>
 </div>
 <div id="gráfico-de-la-serie-historica-del-comportamiento-del-indices-bursatil-de-colombia-del-2014-2021" class="section level3" number="1.4.3">
 <h3>
 <span class="header-section-number">1.4.3</span> Gráfico de la serie historica del comportamiento del indices bursatil de Colombia del 2014-2021<a class="anchor" aria-label="anchor" href="#gr%C3%A1fico-de-la-serie-historica-del-comportamiento-del-indices-bursatil-de-colombia-del-2014-2021"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="bolsa-AP.html#cb12-1" aria-hidden="true" tabindex="-1"></a>Bolsa_colombia <span class="sc">%&gt;%</span> </span>
-<span id="cb12-2"><a href="bolsa-AP.html#cb12-2" aria-hidden="true" tabindex="-1"></a>      <span class="fu">ggplot</span>(<span class="fu">aes</span>(mes_año, precio_de_accion)) <span class="sc">+</span> </span>
-<span id="cb12-3"><a href="bolsa-AP.html#cb12-3" aria-hidden="true" tabindex="-1"></a>      <span class="fu">geom_line</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="bolsa-AP.html#cb10-1" aria-hidden="true" tabindex="-1"></a>Bolsa_colombia <span class="sc">%&gt;%</span> </span>
+<span id="cb10-2"><a href="bolsa-AP.html#cb10-2" aria-hidden="true" tabindex="-1"></a>      <span class="fu">ggplot</span>(<span class="fu">aes</span>(mes_año, precio_de_accion)) <span class="sc">+</span> </span>
+<span id="cb10-3"><a href="bolsa-AP.html#cb10-3" aria-hidden="true" tabindex="-1"></a>      <span class="fu">geom_line</span>()</span></code></pre></div>
 <div class="inline-figure"><img src="02_elvis_files/figure-html/unnamed-chunk-10-1.png" width="672"></div>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
-<code class="sourceCode R">
-<span class="fu">ggplot</span><span class="op">(</span><span class="va">Bolsa_colombia</span>, <span class="fu">aes</span><span class="op">(</span><span class="va">precio_de_accion</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">geom_boxplot</span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<div class="inline-figure"><img src="02_elvis_files/figure-html/unnamed-chunk-10-2.png" width="672"></div>
 <p>Observamos que en los años 2014 Colombia pasaba su peor momento de crisis alcanzando un piso minimo en los años 2016, luego del cual tuvo su acelerada crecimiento hasta el año 2018, luego del cual mantuvo un periode ciclico hasta el año 2020 donde tiene otra caida, producto de la crisis sanitaria, luego del cual se esta recuperando de forma lenta.</p>
-<p>El 50% del precio de las acciones estuvieron por encima de los índices bursatiles de 1500.</p>
 </div>
 <div id="gráfico-de-la-serie-historica-del-comportamiento-del-indices-bursatil-de-chile-del-2014-2021" class="section level3" number="1.4.4">
 <h3>
 <span class="header-section-number">1.4.4</span> Gráfico de la serie historica del comportamiento del indices bursatil de Chile del 2014-2021<a class="anchor" aria-label="anchor" href="#gr%C3%A1fico-de-la-serie-historica-del-comportamiento-del-indices-bursatil-de-chile-del-2014-2021"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="bolsa-AP.html#cb14-1" aria-hidden="true" tabindex="-1"></a>Bolsa_chile <span class="sc">%&gt;%</span> </span>
-<span id="cb14-2"><a href="bolsa-AP.html#cb14-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ggplot</span>(<span class="fu">aes</span>(mes_año, precio_de_accion)) <span class="sc">+</span> </span>
-<span id="cb14-3"><a href="bolsa-AP.html#cb14-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_line</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="bolsa-AP.html#cb11-1" aria-hidden="true" tabindex="-1"></a>Bolsa_chile <span class="sc">%&gt;%</span> </span>
+<span id="cb11-2"><a href="bolsa-AP.html#cb11-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ggplot</span>(<span class="fu">aes</span>(mes_año, precio_de_accion)) <span class="sc">+</span> </span>
+<span id="cb11-3"><a href="bolsa-AP.html#cb11-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_line</span>()</span></code></pre></div>
 <div class="inline-figure"><img src="02_elvis_files/figure-html/unnamed-chunk-11-1.png" width="672"></div>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
-<code class="sourceCode R">
-<span class="fu">ggplot</span><span class="op">(</span><span class="va">Bolsa_chile</span>, <span class="fu">aes</span><span class="op">(</span><span class="va">precio_de_accion</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">geom_boxplot</span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<div class="inline-figure"><img src="02_elvis_files/figure-html/unnamed-chunk-11-2.png" width="672"></div>
 <p>Observamos que en los años 2014 Chile pasaba momento de crecimiento lento, luego del cual tuvo una acelerado creciemiento a partir de los años 2016 alcanzando su pico maximo en los años 2018, luego del cual comenso su caida terminando por completo el años 2020 producto de la crisis sanitaria, luego del cual se esta recuperando de forma lenta.</p>
-<p>El 50% del precio de las acciones estuvieron por encima de los índices bursatiles de 4300.</p>
 </div>
 <div id="gráfico-comparativo-la-serie-historica-del-indices-bursatil-de-los-paises-de-alianza-del-pacifico-del-2014-2021" class="section level3" number="1.4.5">
 <h3>
 <span class="header-section-number">1.4.5</span> Gráfico comparativo la serie historica del indices bursatil de los paises de alianza del pacifico del 2014-2021<a class="anchor" aria-label="anchor" href="#gr%C3%A1fico-comparativo-la-serie-historica-del-indices-bursatil-de-los-paises-de-alianza-del-pacifico-del-2014-2021"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="bolsa-AP.html#cb16-1" aria-hidden="true" tabindex="-1"></a>bolsa_AP <span class="sc">%&gt;%</span> </span>
-<span id="cb16-2"><a href="bolsa-AP.html#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(mes_año, precio_de_accion, <span class="at">color =</span> bolsa)) <span class="sc">+</span></span>
-<span id="cb16-3"><a href="bolsa-AP.html#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() </span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="bolsa-AP.html#cb12-1" aria-hidden="true" tabindex="-1"></a>bolsa_AP <span class="sc">%&gt;%</span> </span>
+<span id="cb12-2"><a href="bolsa-AP.html#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(mes_año, precio_de_accion, <span class="at">color =</span> bolsa)) <span class="sc">+</span></span>
+<span id="cb12-3"><a href="bolsa-AP.html#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() </span></code></pre></div>
 <div class="inline-figure"><img src="02_elvis_files/figure-html/unnamed-chunk-12-1.png" width="672"></div>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="bolsa-AP.html#cb17-1" aria-hidden="true" tabindex="-1"></a>bolsa_AP <span class="sc">%&gt;%</span> </span>
-<span id="cb17-2"><a href="bolsa-AP.html#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(mes_año, precio_de_accion, <span class="at">color =</span> bolsa)) <span class="sc">+</span></span>
-<span id="cb17-3"><a href="bolsa-AP.html#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
-<div class="inline-figure"><img src="02_elvis_files/figure-html/unnamed-chunk-12-2.png" width="672"></div>
-<p>Observamos que los paises de Chile y México mantuvieron su indice bursatil muy parejos desde desde la integracion de la Alianza del Pacífico, además dichos paises superan a Perú y Colombia en índices bursatiles en aprimadamente 2000 puntos en los precios de sus acciones. Cabe notar que México tiene una mejor recuperacion que Chile en su mercado.</p>
-<p>Por otro lado Perú y Colombia han mantenido muy similar en su indice bursatil, cabe notar que Perú tiene un mejor índice bursatil que colombia aun despues de la crisis sanitaria Covid-19.</p>
-<p>Ademas se puede notar claramente con el grafico de cajas que los 50% del precio de las acciones de Colombia es menor a los de Perú y éste a su vez menor que Chile el cual es superado ligeramente por México.</p>
+<p>Observamos que los paises de Chile y México mantuvieron su indice bursatil muy parejos desde la integracion de la Alianza del Pacífico, además dichos paises superan a Perú y Colombia en índices bursatiles en aproximadamente 2000 puntos en los precios de sus acciones. Cabe notar que México tiene una mejor recuperación que Chile en su mercado.</p>
+<p>Por otro lado Perú y Colombia han mantenido muy similar en su índice bursatil, cabe notar que Perú tiene un mejor índice bursatil que colombia aun despues de la crisis sanitaria Covid-19.</p>
 </div>
 </div>
 <div id="conclusiones" class="section level2" number="1.5">
 <h2>
 <span class="header-section-number">1.5</span> Conclusiones<a class="anchor" aria-label="anchor" href="#conclusiones"><i class="fas fa-link"></i></a>
 </h2>
-<p>Perú ha tenido un indice bursatil en crecimiento desde el año 2016 mas aun de la caida en crisis sanitaria muestra una clara garantia de atraccion de las inversiones.</p>
-<p>México ha tenido un indice bursatil en crecimiento desde antes del 2014, antes de la crisis sanitaria mostro su caida, pero actualmente su economia se recupera muy satisfactoriamnte lo cual muestra claras garantias de un mercado confiable en sus lainversiones</p>
-<p>Colombia no ha tenido ha tenido un indice bursatil irregular pero en crecimiento lento con respecto a años anteriores a la crisis sanitaria, luego del cual se recupera con indice muy por debajo de sus puntos anterioes a la crisis, lo que muestra un mercado no muy confiable en las inversiones.</p>
-<p>Por su parte Chile durante el tiempo de la comparacion desde los años 2014 de la Alianza del Pacifico, mostro los tres primeros años en una rapido crecimiento, luego del cual su caida tambien fue igual que su crecimeinto; mas aun luego de la crisis sanitaria, se recupera lentamente no llegando a su mejor momento, lo que muestra que tampoco no hay una clara garantia para las inversiones, pero viendo su historial es muy prematuro hablar de ello.</p>
-<p>se puede decir que de los 4 paises el que mejor posicionamiento tiene con respecto a su mercado es México y Perú, mas aun luego de la crisi sanitaria del Covid-19.</p>
+<p>Perú ha tenido un indice bursatil en crecimiento desde el año 2016 mas aun de la caida en crisis sanitaria muestra una clara garantia de atracción de las inversiones.
+México ha tenido un indice bursatil en crecimiento desde antes del 2014, antes de la crisis sanitaria mostró su caida, pero actualmente su economia se recupera muy satisfactoriamnte lo cual muestra claras garantias de un mercado confiable para las inversiones.</p>
+<p>Colombia ha mantenido un índice bursatil irregular, casi constante en crecimiento lento con respecto a años anteriores a la crisis sanitaria, luego del cual se recupera con indice muy por debajo de sus puntos anterioes a la crisis, lo que muestra un mercado no muy confiable en las inversiones.</p>
+<p>Por su parte Chile durante el tiempo de la comparacion desde los años 2014 de la Alianza del Pacifico, mostró los tres primeros años en un rapido crecimiento, luego del cual su caida también fue igual que su crecimeinto en sentido opuesto; mas aun luego de la crisis sanitaria, se recupera lentamente no llegando a su mejor momento, lo que muestra que tampoco no hay una clara garantia para las inversiones, pero viendo su historial es muy prematuro hablar de ello.</p>
+<p>Se puede decir que de los 4 paises el que mejor posicionamiento que tiene con respecto a su mercado es México y Perú, más aun luego de la crisis sanitaria del Covid-19.</p>
 </div>
 <div id="referencias" class="section level2" number="1.6">
 <h2>
@@ -287,7 +259,7 @@ Luego, Modificamos las variables de nuestro conjunto de datos con mutate(), pust
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="sobre-los-autores.html">Sobre los autores</a></div>
-<div class="next"><a href="trabajo-de-antenor.html"><span class="header-section-number">2</span> Trabajo de Antenor</a></div>
+<div class="next"><a href="ausentismo.html"><span class="header-section-number">2</span> Explorando factores sociales en el ausentismo electoral</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
@@ -328,7 +300,7 @@ Luego, Modificamos las variables de nuestro conjunto de datos con mutate(), pust
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>A Minimal Book Example</strong>" was written by John Doe. It was last built on 2021-12-16.</p>
+    <p>"<strong>Práctica de elaboración de reporte con datos</strong>" was written by Calderon, Samuel; Caycho, Elvis; Escudero, Antenor; Reyes, Nelly; Zúñiga, Leanna. It was last built on 2022-01-03.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
