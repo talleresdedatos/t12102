@@ -11,6 +11,8 @@ knitr::opts_chunk$set(
 
 # default print method for dataframes ----
 
+## Por alguna razón no funciona
+
 default_tbl <- function(x) {
     x |>
         flextable::flextable() |>
@@ -51,6 +53,7 @@ ggplot2::theme_set(theme_td())
 # update geoms
 ggplot2::update_geom_defaults("label", list(hjust = "inward", size = 3))
 ggplot2::update_geom_defaults("col", list(fill = "#009f9f"))
+ggplot2::update_geom_defaults("point", list(alpha = 0.3))
 ggplot2::update_geom_defaults("line", list(size = 1.5, linetype = 1, color = ggplot2::alpha("#007F7F", 0.25)))
 
 # default fill and color scale
