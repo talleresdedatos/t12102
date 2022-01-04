@@ -145,10 +145,10 @@ bolsa_AP <- bind_rows(Bolsa_chile, Bolsa_peru, Bolsa_mexico, Bolsa_colombia)
 
 
 ```r
-
-Bolsa_peru  %>%      
-    ggplot(aes(mes_año, precio_de_accion)) + 
-geom_line()
+Bolsa_peru  %>%
+    ggplot(aes(mes_año, precio_de_accion)) +
+    geom_line() +
+    scale_x_date(date_breaks = "1 year", date_labels = "%Y", date_minor_breaks = "4 months")
 ```
 
 <img src="02_elvis_files/figure-html/unnamed-chunk-8-1.png" width="672" />
@@ -161,9 +161,10 @@ Observamos que en los años 2014 el Perú pasaba su peor momento de crisis alcan
 
 
 ```r
-Bolsa_mexico %>% 
-       ggplot(aes(mes_año, precio_de_accion)) + 
-       geom_line()
+Bolsa_mexico %>%
+    ggplot(aes(mes_año, precio_de_accion)) +
+    geom_line()+
+    scale_x_date(date_breaks = "1 year", date_labels = "%Y", date_minor_breaks = "4 months")
 ```
 
 <img src="02_elvis_files/figure-html/unnamed-chunk-9-1.png" width="672" />
@@ -176,39 +177,38 @@ Observamos que en los años 2014 México estaba en un momento bueno de crecimien
 
 
 ```r
-Bolsa_colombia %>% 
-      ggplot(aes(mes_año, precio_de_accion)) + 
-      geom_line()
+Bolsa_colombia %>%
+    ggplot(aes(mes_año, precio_de_accion)) +
+    geom_line()+
+    scale_x_date(date_breaks = "1 year", date_labels = "%Y", date_minor_breaks = "4 months")
 ```
 
 <img src="02_elvis_files/figure-html/unnamed-chunk-10-1.png" width="672" />
 
 Observamos que en los años 2014 Colombia pasaba su peor momento de crisis alcanzando un piso minimo en los años  2016, luego del cual tuvo su acelerada crecimiento hasta el año 2018, luego del cual mantuvo un periode ciclico hasta el año 2020 donde tiene otra caida, producto de la crisis sanitaria, luego del cual se esta recuperando de forma lenta.
 
-
-
 ### Gráfico de la serie historica del comportamiento del indices bursatil de Chile del 2014-2021
 
 
 ```r
-Bolsa_chile %>% 
-        ggplot(aes(mes_año, precio_de_accion)) + 
-        geom_line()
+Bolsa_chile %>%
+    ggplot(aes(mes_año, precio_de_accion)) +
+    geom_line()+
+    scale_x_date(date_breaks = "1 year", date_labels = "%Y", date_minor_breaks = "4 months")
 ```
 
 <img src="02_elvis_files/figure-html/unnamed-chunk-11-1.png" width="672" />
 
 Observamos que en los años 2014 Chile pasaba momento de crecimiento lento, luego del cual tuvo una acelerado creciemiento a partir de los años 2016 alcanzando su pico  maximo en los años 2018, luego del cual comenso su caida terminando por completo el años 2020 producto de la crisis sanitaria, luego del cual se esta recuperando de forma lenta.
 
-
-
 ### Gráfico comparativo la serie historica del indices bursatil de los paises de alianza del pacifico del    2014-2021
 
 
 ```r
-bolsa_AP %>% 
-  ggplot(aes(mes_año, precio_de_accion, color = bolsa)) +
-  geom_line() 
+bolsa_AP %>%
+    ggplot(aes(mes_año, precio_de_accion, color = bolsa)) +
+    geom_line()+
+    scale_x_date(date_breaks = "1 year", date_labels = "%Y", date_minor_breaks = "4 months")
 ```
 
 <img src="02_elvis_files/figure-html/unnamed-chunk-12-1.png" width="672" />
@@ -216,8 +216,6 @@ bolsa_AP %>%
 Observamos que los paises de Chile y México mantuvieron su indice bursatil muy parejos desde la integracion de la Alianza del Pacífico, además dichos paises superan a Perú y Colombia en índices bursatiles en aproximadamente 2000 puntos en los precios de sus acciones. Cabe notar que México tiene una mejor recuperación que Chile en su mercado. 
 
 Por otro lado Perú y Colombia han mantenido muy similar en su índice bursatil, cabe notar que Perú tiene un mejor índice bursatil que colombia aun despues de la crisis sanitaria Covid-19.
-
-
 
 ## Conclusiones
  
