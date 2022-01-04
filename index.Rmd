@@ -35,6 +35,8 @@ Las presentaciones con las que se dictaron los talleres, en su versión casi fin
 
 A quien lea esta compilación le hago recordar que los trabajos son realizados por personas que están en proceso de afianzar sus habilidades escribiendo código en R. Es posible que encuentren algunos bloques de código que se podían escribir mejor, pero he preferido mantener esas imperfecciones para que en el futuro las personas que escribieron el código puedan medir su progreso.
 
+Ha sido para mi un gran honor ver nacer trabajos muy interesantes y las conversaciones que tuve con cada participante mientras intentábamos darle forma a los temas de investigación fueron muy enriquecedoras. Me siento muy afortunado de haber acompañado este proceso y, aunque nuestros horarios no siempre coincidían, agradezco el esfuerzo puesto en lograr completar esta tarea. 
+
 Si alguna persona estuviese interesada en participar de algún taller o de practicar sus habilidades con R en la elaboración de algún reporte de datos como los que se encuentran en este libro digital, pueden contactarme por cualquiera de los medios indicados en el siguiente enlace -> [Contacto](https://www.samuelenrique.com/#contact).
 
 **Samuel Calderon**
